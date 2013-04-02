@@ -1,0 +1,8 @@
+{
+  "name": "offline",
+  "version":"1.0",
+  "author":"",
+  "date":"",
+  "fileoverview":"",
+  "list":"./{version}/tmp, ./{version}/desmo.html, ./{version}/index.js, ./index.html, ./README.md,./{version}/guide/index.md"
+}
