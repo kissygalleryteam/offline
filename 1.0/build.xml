@@ -1,26 +1,15 @@
-<project name="component.build" default="build" basedir=".">
+<project name="component.build" default="build" basedir="."  xmlns:ac="antlib:net.sf.antcontrib">
     <description>gallery component  Build File</description>
     <property name="charset" value="utf-8"/>
     <property name="name" value="offline"/>
-    <property name="version" value="1.1"/>
+    <property name="version" value="1.0"/>
+    <property name="build.files" value="index.js"/>
     <property name="tool.dir" location="../../../kissy-tools"/>
     <property name="compiler" location="${tool.dir}/closure-compiler/compiler.jar"/>
     <property name="yuicompressor" location="${tool.dir}/yuicompressor/yuicompressor.jar"/>
+    <property name="module.compiler" value="${tool.dir}/module-compiler/module-compiler.jar"/>
     <property name="build.dir" location="./build/offline/${version}"/>
     <property name="src.dir" location="."/>
-    <!--合并源码文件，排除多余js-->
-    <target name="concat">
-        <concat destfile="index-pkg.js" encoding="${charset}" outputencoding="${charset}" overwrite="true">
-            <fileset dir="${src.dir}" includes="**/*.js" excludes="guide/**/*.js,demo/**/*.js,plugin/**/*.js,build/**/*.js"/>
-            <filterchain>
-                <deletecharacters chars="&#xFEFF;"/>
-            </filterchain>
-        </concat>
-    </target>
-    <!--移动合并后源文件到build目录下-->
-    <target name="move">
-        <move file="index-pkg.js" tofile="${build.dir}/index.js"/>
-    </target>
     <target name="dircheck">
         <condition property="build.dir.exists">
             <available file="${build.dir}" type="dir"/>
@@ -36,11 +25,6 @@
         <mkdir dir="${build.dir}">
 
         </mkdir>
-    </target>
-    <target name="move-plugin">
-        <copy todir="${build.dir}/plugin" overwrite="true">
-            <fileset dir="${src.dir}/plugin"/>
-        </copy>
     </target>
     <!--压缩css文件-->
     <target name="minify-css">
@@ -85,6 +69,48 @@
         <renameext srcDir="${build.dir}" includes="**/*.ascii.js"  fromExtension=".ascii.js" toExtension=".js" replace="true"/>
     </target>
 
-    <target name="build" depends="clean-build,mkdir,concat,move,minify-css,minify,native2ascii">
+    <!--js  combo 地址获取-->
+    <target name='combo'>
+        <ac:for param="page">
+            <!--入口模块文件所在目录的所有模块循环处理-->
+            <path>
+                <fileset dir="${src.dir}" includes="${build.files}"/>
+            </path>
+            <sequential>
+                <ac:var name="var.modname" unset="true"/>
+                <basename property="var.modname" file="@{page}" suffix=".js"/>
+                <echo>
+                    build ${var.modname} in @{page}
+                </echo>
+                <java classname="com.taobao.f2e.Main">
+                    <arg value="-require"/>
+                    <!-- 入口模块 -->
+                    <arg value="gallery/${name}/${version}/${var.modname}"/>
+
+                    <arg value="-baseUrls"/>
+                    <arg value="../../../"/>
+
+                    <arg value="-encodings"/>
+                    <arg value="${charset}"/>
+
+                    <arg value="-outputEncoding"/>
+                    <arg value="${charset}"/>
+
+                    <arg value="-output"/>
+                    <arg value="${build.dir}/${var.modname}.js"/>
+
+                    <arg value="-outputDependency"/>
+                    <arg value="${build.dir}/${var.modname}.dep.js"/>
+
+                    <classpath>
+                        <pathelement path="${module.compiler}"/>
+                        <pathelement path="${java.class.path}"/>
+                    </classpath>
+                </java>
+            </sequential>
+        </ac:for>
+    </target>
+
+    <target name="build" depends="clean-build,mkdir,combo,minify-css,minify,native2ascii">
     </target>
 </project>
