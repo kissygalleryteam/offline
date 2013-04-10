@@ -1,28 +1,28 @@
-## ×ÛÊö
+## ç»¼è¿°
 
-OfflineÊÇÒ»¸öÀëÏß´æ´¢×é¼þ£¬ÊÇ¶ÔgalleryÀïÃæÖ®Ç°Ò»¸öÀëÏß´æ´¢£¨local-storage£©µÄ¸Ä½ø¡£
+Offlineæ˜¯ä¸€ä¸ªç¦»çº¿å­˜å‚¨ç»„ä»¶ï¼Œæ˜¯å¯¹galleryé‡Œé¢ä¹‹å‰ä¸€ä¸ªç¦»çº¿å­˜å‚¨ï¼ˆlocal-storageï¼‰çš„æ”¹è¿›ã€‚
 
-* °æ±¾£º1.0
-* »ùÓÚ£ºkissy1.20»òÕß¸ü¸ß°æ±¾
-* ×÷Õß£º²®·½
+* ç‰ˆæœ¬ï¼š1.0
+* åŸºäºŽï¼škissy1.20æˆ–è€…æ›´é«˜ç‰ˆæœ¬
+* ä½œè€…ï¼šä¼¯æ–¹
 
 
-#### OfflineµÄÌØÐÔ
+#### Offlineçš„ç‰¹æ€§
 
-* ½«localStorageºÍµÍ°æ±¾µÄie userData·ÖÀë³öÀ´£¬·Ö±ð¼ÓÔØÎÄ¼þ
-* Ìá¹©ÁË¹ýÆÚÊ±¼ä´¦Àí
-* ÔÚÓÃ»§½øÐÐÌí¼Ó£¬É¾³ýµÈ²Ù×÷µÄÊ±ºòÌá¹©ÊÂ¼þ´¥·¢£¬·½±ãÓÃ»§¼àÌý
-* Ã¿¸öÍâ²¿·½·¨¶¼Ìá¹©ÁË·µ»ØÖµ£¬±ãÓÚÐ´µ¥Ôª²âÊÔ
-* ¶ÔÃ¿¸ö´«ÈëµÄ²ÎÊý¶¼½øÐÐÁËÑéÖ¤
-* Ìá¹©ÁËÍ³¼ÆÊ¹ÓÃ×Ö½ÚµÄ·½·¨£¬±ãÓÚÓÃ»§¹ÀËãÊ£ÓàÈÝÁ¿
+* å°†localStorageå’Œä½Žç‰ˆæœ¬çš„ie userDataåˆ†ç¦»å‡ºæ¥ï¼Œåˆ†åˆ«åŠ è½½æ–‡ä»¶
+* æä¾›äº†è¿‡æœŸæ—¶é—´å¤„ç†
+* åœ¨ç”¨æˆ·è¿›è¡Œæ·»åŠ ï¼Œåˆ é™¤ç­‰æ“ä½œçš„æ—¶å€™æä¾›äº‹ä»¶è§¦å‘ï¼Œæ–¹ä¾¿ç”¨æˆ·ç›‘å¬
+* æ¯ä¸ªå¤–éƒ¨æ–¹æ³•éƒ½æä¾›äº†è¿”å›žå€¼ï¼Œä¾¿äºŽå†™å•å…ƒæµ‹è¯•
+* å¯¹æ¯ä¸ªä¼ å…¥çš„å‚æ•°éƒ½è¿›è¡Œäº†éªŒè¯
+* æä¾›äº†ç»Ÿè®¡ä½¿ç”¨å­—èŠ‚çš„æ–¹æ³•ï¼Œä¾¿äºŽç”¨æˆ·ä¼°ç®—å‰©ä½™å®¹é‡
 
 ## demo
 
-[µã»÷·ÃÎÊ](http://sirzxj.github.com/gallery/offline/1.0/demo.html)
+[ç‚¹å‡»è®¿é—®](http://sirzxj.github.com/gallery/offline/1.0/demo.html)
 
-## ×é¼þÊ¹ÓÃ
+## ç»„ä»¶ä½¿ç”¨
 
-kissy1.2ÏÂÐèÒªgalleryµÄ°üÅäÖÃ£º
+kissy1.2ä¸‹éœ€è¦galleryçš„åŒ…é…ç½®ï¼š
 
 ```javascript
 KISSY.config({
@@ -36,48 +36,48 @@ KISSY.config({
 });
 ```
 
-kissy1.3¾Í²»ÐèÒª¸ÃÅäÖÃ¡£
+kissy1.3å°±ä¸éœ€è¦è¯¥é…ç½®ã€‚
 
 
 
 
-### 1.¼ÓÔØOfflineÄ£¿é,³õÊ¼»¯Offline
+### 1.åŠ è½½Offlineæ¨¡å—,åˆå§‹åŒ–Offline
 
 ```javascript
     KISSY.use('gallery/offline/1.0/index', function (S, Offline) {
         var offline = new Offline();
     })
 ```
-**ÌáÐÑ**£ºuse()µÄ»Øµ÷£¬µÚÒ»¸ö²ÎÊýÊÇKISSY£¬µÚ¶þ¸ö²ÎÊý²ÅÊÇ×é¼þ¡£
+**æé†’**ï¼šuse()çš„å›žè°ƒï¼Œç¬¬ä¸€ä¸ªå‚æ•°æ˜¯KISSYï¼Œç¬¬äºŒä¸ªå‚æ•°æ‰æ˜¯ç»„ä»¶ã€‚
 
-### 2. Ê¹ÓÃsetItem·½·¨±£´æÊý¾Ý
+### 2. ä½¿ç”¨setItemæ–¹æ³•ä¿å­˜æ•°æ®
 offline.setItem(key, value, deadline);
-**ÌáÐÑ**£ºkeyºÍvalue±ØÐë¶¼ÊÇ×Ö·û´®,µÚÈý¸ö²ÎÊýdeadlineÊÇ¿ÉÑ¡µÄ£¬µ¥Î»ÎªºÁÃë£¬ÓÃÓÚkeyµÄ¹ýÆÚÊ±¼ä£¬¹ýÆÚºó×Ô¶¯Çå³ýkey
+**æé†’**ï¼škeyå’Œvalueå¿…é¡»éƒ½æ˜¯å­—ç¬¦ä¸²,ç¬¬ä¸‰ä¸ªå‚æ•°deadlineæ˜¯å¯é€‰çš„ï¼Œå•ä½ä¸ºæ¯«ç§’ï¼Œç”¨äºŽkeyçš„è¿‡æœŸæ—¶é—´ï¼Œè¿‡æœŸåŽè‡ªåŠ¨æ¸…é™¤key
 	
 
 ```javascript
-//½«key1 ´æµ½ä¯ÀÀÆ÷Àï30Ìì
+//å°†key1 å­˜åˆ°æµè§ˆå™¨é‡Œ30å¤©
 offline.setItem('key1','value1',1000*60*60*24*30);
 ```
-·µ»ØÖµ£º³É¹¦·µ»Øtrue,Ê§°Ü·µ»Øfalse
+è¿”å›žå€¼ï¼šæˆåŠŸè¿”å›žtrue,å¤±è´¥è¿”å›žfalse
 
 
 
-### 3. ³£¹æ·½·¨
-getItem»ñµÃ,removeItemÒÆ³ý£¬clearÇå¿Õ
+### 3. å¸¸è§„æ–¹æ³•
+getItemèŽ·å¾—,removeItemç§»é™¤ï¼Œclearæ¸…ç©º
 
-### 4. ÐÂÔö·½·¨	
+### 4. æ–°å¢žæ–¹æ³•	
 
 * timeRemain
-	»ñÈ¡Ä³¸ökey´æ´¢µÄÊ£ÓàÊ±¼ä£¨ºÁÃëÊý£©,Ã»ÓÐÏÞÖÆµÄkey»á·µ»Ø-1
+	èŽ·å–æŸä¸ªkeyå­˜å‚¨çš„å‰©ä½™æ—¶é—´ï¼ˆæ¯«ç§’æ•°ï¼‰,æ²¡æœ‰é™åˆ¶çš„keyä¼šè¿”å›ž-1
 * size
-	»ñÈ¡±¾µØ´æ´¢µÄ×Ö¶ÎÊý
+	èŽ·å–æœ¬åœ°å­˜å‚¨çš„å­—æ®µæ•°
 * getAll
-	»ñÈ¡È«²¿´æ´¢µÄ×Ö¶Î
-	**ÌáÐÑ**£ºgetAllÄ¬ÈÏ·µ»ØµÄÊÇËùÓÐkeyºÍvalue ¾­¹ý stringify µÄ×Ö·û´®£¬µ±´«µÝtrue²ÎÊýÊ±ºò£¬Ôò·µ»Ø¶ÔÏó¡£
+	èŽ·å–å…¨éƒ¨å­˜å‚¨çš„å­—æ®µ
+	**æé†’**ï¼šgetAllé»˜è®¤è¿”å›žçš„æ˜¯æ‰€æœ‰keyå’Œvalue ç»è¿‡ stringify çš„å­—ç¬¦ä¸²ï¼Œå½“ä¼ é€’trueå‚æ•°æ—¶å€™ï¼Œåˆ™è¿”å›žå¯¹è±¡ã€‚
 * usedByte
-	·µ»Øä¯ÀÀÆ÷ÖÐ±¾µØ´æ´¢ÒÑ¾­Ê¹ÓÃµÄ×Ö½ÚÊý¡£
+	è¿”å›žæµè§ˆå™¨ä¸­æœ¬åœ°å­˜å‚¨å·²ç»ä½¿ç”¨çš„å­—èŠ‚æ•°ã€‚
 
-### 5. ÆäËû
-ÔÚÊ¹ÓÃsetItem,removeItem,clearµÄÊ±ºò£¬·Ö±ðÎªÎªKISSY.Offline ´¥·¢ÁË setItem£¬removeItem,clearµÈÊÂ¼þ£¬ÓÃÓÚ¼àÌý	 
+### 5. å…¶ä»–
+åœ¨ä½¿ç”¨setItem,removeItem,clearçš„æ—¶å€™ï¼Œåˆ†åˆ«ä¸ºä¸ºKISSY.Offline è§¦å‘äº† setItemï¼ŒremoveItem,clearç­‰äº‹ä»¶ï¼Œç”¨äºŽç›‘å¬	 
 
