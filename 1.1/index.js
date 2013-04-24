@@ -3,7 +3,7 @@
  * @author 伯方<bofang.zxj@taobao.com>
  **/
 KISSY.add(function(S, LocalStorage, IeOffline) {
-  var a = "hello world";
+  var a = "hello world two";
 	var DomBase = typeof window.localStorage !== 'undefined' ? LocalStorage : S.UA.ie < 8 ? IeOffline : null;
 	DomBase.init();
 	/**
