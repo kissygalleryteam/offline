@@ -282,6 +282,7 @@ KISSY.add('gallery/offline/1.1/ie-offline',function(S) {
  * @author 伯方<bofang.zxj@taobao.com>
  **/
 KISSY.add('gallery/offline/1.1/index',function(S, LocalStorage, IeOffline) {
+  var a = "hello world";
 	var DomBase = typeof window.localStorage !== 'undefined' ? LocalStorage : S.UA.ie < 8 ? IeOffline : null;
 	DomBase.init();
 	/**
