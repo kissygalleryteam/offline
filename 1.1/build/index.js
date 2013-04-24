@@ -1,16 +1,16 @@
 /*
 combined files : 
 
-gallery/offline/1.1/localstorage
-gallery/offline/1.1/ie-offline
-gallery/offline/1.1/index
+gallery/offline/myoffline/1.1/localstorage
+gallery/offline/myoffline/1.1/ie-offline
+gallery/offline/myoffline/1.1/index
 
 */
 /**
  * @fileoverview 基于localStorage的离线存储
  * @author 伯方<bofang.zxj@taobao.com>
  **/
-KISSY.add('gallery/offline/1.1/localstorage',function(S) {
+KISSY.add('gallery/offline/myoffline/1.1/localstorage',function(S) {
 	var re = {},
 		DEADLINE_KEY = 'DEADLINE-KEY',
 		ls, oDeadline;
@@ -134,7 +134,7 @@ KISSY.add('gallery/offline/1.1/localstorage',function(S) {
  * @fileoverview IE6,7下面的离线存储
  * @author 伯方<bofang.zxj@taobao.com>
  **/
-KISSY.add('gallery/offline/1.1/ie-offline',function(S) {
+KISSY.add('gallery/offline/myoffline/1.1/ie-offline',function(S) {
 	var re = {},
 		doc = document,
 		initDate = new Date().getTime();
@@ -281,8 +281,8 @@ KISSY.add('gallery/offline/1.1/ie-offline',function(S) {
  * @fileoverview 离线存储存储
  * @author 伯方<bofang.zxj@taobao.com>
  **/
-KISSY.add('gallery/offline/1.1/index',function(S, LocalStorage, IeOffline) {
-  var a = "hello world";
+KISSY.add('gallery/offline/myoffline/1.1/index',function(S, LocalStorage, IeOffline) {
+  var a = "hello world two";
 	var DomBase = typeof window.localStorage !== 'undefined' ? LocalStorage : S.UA.ie < 8 ? IeOffline : null;
 	DomBase.init();
 	/**
