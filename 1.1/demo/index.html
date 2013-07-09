@@ -37,14 +37,19 @@
 		<li><input type="button" id="J_Save" class="btn left" value="保存"></li>
 	</ul>
 
-	<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+	<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/seed.js"></script>
 	<script type="text/javascript">
 		KISSY.config({
             packages: [{
-                name: "gallery",
-                path: "../../../",
-                charset: "utf-8"
+              name: "offline",
+              path: "../../../"
             }]
+        });
+
+        KISSY.config('modules',{
+          'gallery/offline/1.1/':{
+            alias: 'offline/1.1/'
+          }
         });
 	</script>
 	
@@ -81,7 +86,7 @@
 	
 	<script type="text/javascript">
 		//alert(document.addBehavior);
-		KISSY.use('gallery/offline/1.0/index',function (S,Offiline) {
+		KISSY.use('gallery/offline/1.1/index, node',function (S,Offiline) {
 			var a = new Offiline();
 			var $ = S.all;
 			var TEMPLATE = '<tr class="J_List">'+

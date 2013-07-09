@@ -2,7 +2,7 @@
 
 Offline是一个离线存储组件，是对gallery里面之前一个离线存储（local-storage）的改进。
 
-* 版本：1.0
+* 版本：1.1
 * 基于：kissy1.20或者更高版本
 * 作者：伯方
 
@@ -18,7 +18,7 @@ Offline是一个离线存储组件，是对gallery里面之前一个离线存储
 
 ## demo
 
-[点击访问](http://sirzxj.github.com/gallery/offline/1.0/demo.html)
+[点击访问](http://gallery.kissyui.com/offline/1.1/demo/index.html)
 
 ## 组件使用
 
@@ -44,7 +44,7 @@ kissy1.3就不需要该配置。
 ### 1.加载Offline模块,初始化Offline
 
 ```javascript
-    KISSY.use('gallery/offline/1.0/index', function (S, Offline) {
+    KISSY.use('gallery/offline/1.1/index', function (S, Offline) {
         var offline = new Offline();
     })
 ```
