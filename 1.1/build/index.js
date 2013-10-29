@@ -287,7 +287,7 @@ KISSY.add('gallery/offline/1.1/ie-offline',function(S,Json) {
  * @fileoverview 离线存储存储
  * @author 伯方<bofang.zxj@taobao.com>
  **/
-KISSY.add('gallery/offline/1.1/index',function(S, LocalStorage, IeOffline) {
+KISSY.add('gallery/offline/1.1/index',function(S, LocalStorage, IeOffline,Base) {
 	var DomBase = typeof window.localStorage !== 'undefined' ? LocalStorage : S.UA.ie < 8 ? IeOffline : null;
 	DomBase.init();
 	/**
