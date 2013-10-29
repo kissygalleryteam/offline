@@ -39,18 +39,20 @@
 
 	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"></script>
 	<script type="text/javascript">
-		KISSY.config({
-            packages: [{
-              name: "offline",
-              path: "../../../"
-            }]
+	var S = KISSY;
+    if (S.Config.debug) {
+        var srcPath = "../../../";
+        S.config({
+            packages:[
+                {
+                    name:"gallery",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
         });
-
-        KISSY.config('modules',{
-          'gallery/offline/1.1/':{
-            alias: 'offline/1.1/'
-          }
-        });
+    }
 	</script>
 	
 	<div class="div">
