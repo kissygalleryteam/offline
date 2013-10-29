@@ -7,4 +7,6 @@
 * 对每个传入的参数都进行了验证
 * 提供了统计使用字节的方法，便于用户估算剩余容量
 
-publish status: https://github.com/kissygalleryteam/kpm/issues/7
+
+
+**请使用1.1版本**

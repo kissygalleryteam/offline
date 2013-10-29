@@ -144,4 +144,6 @@ KISSY.add(function(S) {
 	});
 	//re.init();
 	return re;
+}, {
+  requires: ['json']
 });
