@@ -1,5 +1,5 @@
 /*
-Mon Oct 20 2014 17:09:10 GMT+0800 (CST)
+Mon Oct 20 2014 17:35:30 GMT+0800 (CST)
 combined files by KMD:
 
 kissy5.0_code/index.js
@@ -7,7 +7,7 @@ kissy5.0_code/localstorage.js
 kissy5.0_code/ie-offline.js
 */
 
-define('kg/index',["util","ua","./localstorage","./ie-offline","base"],function(require, exports, module) {
+define('kg/offline/2.5.0/index',["util","ua","./localstorage","./ie-offline","base"],function(require, exports, module) {
 /**
  * @fileoverview 离线存储存储
  * @author 伯方<bofang.zxj@taobao.com>
@@ -120,7 +120,7 @@ Util.extend(Offline, Base, /** @lends Offline.prototype*/
 
 module.exports = Offline;
 });
-define('kg/localstorage',["util","json"],function(require, exports, module) {
+define('kg/offline/2.5.0/localstorage',["util","json"],function(require, exports, module) {
 /**
  * @fileoverview 基于localStorage的离线存储
  * @author 伯方<bofang.zxj@taobao.com>
@@ -237,7 +237,7 @@ Util.mix(re, {
 });	//re.init();
 module.exports = re;
 });
-define('kg/ie-offline',["util","json"],function(require, exports, module) {
+define('kg/offline/2.5.0/ie-offline',["util","json"],function(require, exports, module) {
 /**
  * @fileoverview IE6,7下面的离线存储
  * @author 伯方<bofang.zxj@taobao.com>

@@ -1,4 +1,4 @@
-define('kg/ie-offline',["util","json"],function(require, exports, module) {
+define('kg/offline/2.5.0/ie-offline',["util","json"],function(require, exports, module) {
 /**
  * @fileoverview IE6,7下面的离线存储
  * @author 伯方<bofang.zxj@taobao.com>

@@ -2,6 +2,8 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
+	<script src="//g.alicdn.com/kissy/k/5.0.0/seed.js" data-config="{combine:true}"></script>
+
 	<title></title>
 	<link rel="stylesheet" href="tmp/bootstrap.min.css">
 	<style type="text/css">
@@ -37,33 +39,20 @@
 		<li><input type="button" id="J_Save" class="btn left" value="保存"></li>
 	</ul>
 
-	<script type="text/javascript" src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"></script>
+	
 	<script type="text/javascript">
-        var S = KISSY;
-        S.config({
-            packages:[
-                {
-                    name:"kg",
-                    path:"http://g.tbcdn.cn/kg/",
-                    charset:"utf-8",
-                    ignorePackageNameInUri:true
-                }
-            ]
-        });
-
-        if (S.Config.debug) {
-            var srcPath = "../src/";
-            S.config({
+       
+        
+            require.config({
                 packages:[
                     {
-                        name:"kg/offline/2.0.0",
-                        path:srcPath,
-                        charset:"utf-8",
-                        ignorePackageNameInUri:true
+                        name:"kg",
+                        path:'http://g.assets.daily.taobao.net/',
+                        charset:"utf-8"
                     }
                 ]
             });
-        }
+        
 	</script>
 	
 	<div class="div">
@@ -98,10 +87,13 @@
 	
 	
 	<script type="text/javascript">
+	alert(1)
 		//alert(document.addBehavior);
-		KISSY.use('kg/offline/2.0.0/, node,event',function (S,Offiline,Node,Event) {
+		// KISSY.use('kg/offline/2.0.0/, node,event',function (S,Offiline,Node,Event) {
+			var Offiline = require('kg/offline/2.0.0/index');
 			var a = new Offiline();
-			var $ = Node.all;
+			var $ = require('node').all;
+			var Event = require('event');
 			var TEMPLATE = '<tr class="J_List">'+
 								'<td>{key}</td>'+
 								'<td>{value}</td>'+
@@ -138,12 +130,12 @@
 				$('#J_ShowAll').fire('click');
 			});
 			//删除			
-			Event.delegate(document,'click','.J_Delete',function(e){
+			$(document).delegate('click','.J_Delete',function(e){
 				a.removeItem($(e.currentTarget).attr('item-name'));
 				$('#J_ShowAll').fire('click');
 			});
 			//剩余时间			
-			Event.delegate(document,'click','.J_Remain',function(e){
+			$(document).delegate('click','.J_Remain',function(e){
 				var time = a.timeRemain($(e.currentTarget).attr('item-name'));
 
 				alert(time===-1?'没有限制':time);
@@ -160,7 +152,7 @@
 			$('#J_Used').on('click',function(){
 				alert(a.usedByte());
 			});
-		});
+		
 	</script>
 </body>
 </html>	

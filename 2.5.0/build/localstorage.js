@@ -1,4 +1,4 @@
-define('kg/localstorage',["util","json"],function(require, exports, module) {
+define('kg/offline/2.5.0/localstorage',["util","json"],function(require, exports, module) {
 /**
  * @fileoverview 基于localStorage的离线存储
  * @author 伯方<bofang.zxj@taobao.com>

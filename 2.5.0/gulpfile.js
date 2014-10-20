@@ -12,7 +12,7 @@ var src = "./kissy5.0_code",
 kmc.config({
   // depFilePath: dest + 'mods-dep.js', //全局依赖文件关系，此处配置后下面的各个模块将不会再生成
   packages: [{
-    name: 'kg',
+    name: 'kg/offline/2.5.0',
     combine: true,
     base: src,
     ignorePackageNameInUri:true
