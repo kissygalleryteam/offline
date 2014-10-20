@@ -1,4 +1,3 @@
-define('kg/localstorage',["util","json"],function(require, exports, module) {
 /**
  * @fileoverview 基于localStorage的离线存储
  * @author 伯方<bofang.zxj@taobao.com>
@@ -114,4 +113,3 @@ Util.mix(re, {
 	}
 });	//re.init();
 module.exports = re;
-});

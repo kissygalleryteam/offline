@@ -1,4 +1,3 @@
-define('kg/ie-offline',["util","json"],function(require, exports, module) {
 /**
  * @fileoverview IE6,7下面的离线存储
  * @author 伯方<bofang.zxj@taobao.com>
@@ -133,4 +132,3 @@ Util.mix(re, {
 	}
 });	//re.init();
 module.exports = re;
-});
