@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>offline</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">offline</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span><a href="https://github.com/undefined" target="_blank" data-name="bofang" class="author"><img src="http://0.gravatar.com/avatar/a08e62f620c2cb492b217547289e269f?s=60" alt="bofang"></a><span class="author-name">bofang</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/offline" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="offline" class="J_View">534</span></p>
+          <p class="com-info"><span class="info-label">所属分类</span><a href="http://kpm.taobao.net/list/表单">表单</a>
+          </p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>Offline是一个离线存储组件，是对gallery里面之前一个离线存储（local-storage）的改进。</p>
+<ul>
+<li>版本：1.1</li>
+<li>基于：kissy1.20或者更高版本</li>
+<li>作者：伯方</li>
+</ul>
+<h4 id="offline-">Offline的特性</h4>
+<ul>
+<li>将localStorage和低版本的ie userData分离出来，分别加载文件</li>
+<li>提供了过期时间处理</li>
+<li>在用户进行添加，删除等操作的时候提供事件触发，方便用户监听</li>
+<li>每个外部方法都提供了返回值，便于写单元测试</li>
+<li>对每个传入的参数都进行了验证</li>
+<li>提供了统计使用字节的方法，便于用户估算剩余容量</li>
+</ul>
+<h2 id="demo">demo</h2>
+<p><a href="http://gallery.kissyui.com/offline/2.0.0/demo/index.html">点击访问</a></p>
+<h2 id="-">组件使用</h2>
+<h3 id="1-offline-offline">1.加载Offline模块,初始化Offline</h3>
+<pre><code class="lang-javascript">    KISSY.use(&#39;kg/offline/2.0.0/index&#39;, function (S, Offline) {
+        var offline = new Offline();
+    })
+</code></pre>
+<p><strong>提醒</strong>：use()的回调，第一个参数是KISSY，第二个参数才是组件。</p>
+<h3 id="2-setitem-">2. 使用setItem方法保存数据</h3>
+<p>offline.setItem(key, value, deadline);
+<strong>提醒</strong>：key和value必须都是字符串,第三个参数deadline是可选的，单位为毫秒，用于key的过期时间，过期后自动清除key</p>
+<pre><code class="lang-javascript">//将key1 存到浏览器里30天
+offline.setItem(&#39;key1&#39;,&#39;value1&#39;,1000*60*60*24*30);
+</code></pre>
+<p>返回值：成功返回true,失败返回false</p>
+<h3 id="3-">3. 常规方法</h3>
+<p>getItem获得,removeItem移除，clear清空</p>
+<h3 id="4-">4. 新增方法</h3>
+<ul>
+<li>timeRemain
+  获取某个key存储的剩余时间（毫秒数）,没有限制的key会返回-1</li>
+<li>size
+  获取本地存储的字段数</li>
+<li>getAll
+  获取全部存储的字段
+  <strong>提醒</strong>：getAll默认返回的是所有key和value 经过 stringify 的字符串，当传递true参数时候，则返回对象。</li>
+<li>usedByte
+  返回浏览器中本地存储已经使用的字节数。</li>
+</ul>
+<h3 id="5-">5. 其他</h3>
+<p>在使用setItem,removeItem,clear的时候，分别为为KISSY.Offline 触发了 setItem，removeItem,clear等事件，用于监听     </p>
+
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
