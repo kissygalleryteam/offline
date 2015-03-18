@@ -1,0 +1,14 @@
+{
+    "name": "offline",
+    "version": "3.0.1",
+    "main": "index.js",
+    "ignore": [
+        "**/*",
+        "!index.js",
+        "!index.css",
+        "!src/**/*"
+    ],
+    "dependencies": {
+
+    }
+}
